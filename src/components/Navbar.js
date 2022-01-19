@@ -1,18 +1,43 @@
 import React,{useState} from 'react';
 import {Link,Route,BrowserRouter,Routes} from 'react-router-dom';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Home from './Home';
+import { Burger, MainLogo, MenuI, MenuItem, RoutingLinks, UnList } from './Styles/Navbar.styles';
 
 function Navbar() {
+    const [click,setClick]=useState(false);
+//    const [togMenu,setMenu]=useState(false);
+    const handleClick=()=>{
+        setClick(!click);
+    }
+    
+
+    // const toggleMenu=()=>{
+    //     setMenu(!togMenu);
+    // }
+
+    const listObj=[
+    {name:"Home",path:"/ "},
+    {name:"Service ",path:"/service "},
+    {name:"Products ",path:"/products "},
+    {name:"Sign up ",path:"/sign-up"}]
+
     return (
-        <>
-          <nav className="navbar">
-              <div className="navbar-container">
-                  <Link to='/'>
+        <>    
+            <UnList>
+                <MainLogo to='/'>
                       TRVL <i className='fab fa-typo3'/>
-                  </Link>
-                  <Link to='/home'> Home</Link>
-              </div>
-          </nav>  
+                </MainLogo>
+
+                <Burger onClick={handleClick} className={click?'fas fa-times':'fas fa-bars'}/>
+
+                <MenuItem click={click}>
+                    {listObj.map((value)=><RoutingLinks key={value.name} to={value.path} >{value.name}</RoutingLinks>)}   
+                </MenuItem>
+                
+                    
+                    
+            </UnList>    
+            <Home/>
         </>
     )
 }
