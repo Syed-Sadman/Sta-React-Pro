@@ -1,4 +1,4 @@
-import { BrowserRouter,Routes,Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home, { Container } from "./components/Home";
 import Navbar from "./components/Navbar";
 //import Navbar from "./components/Navbar";
@@ -7,25 +7,24 @@ import GlobalStyles from "./Global.styles";
 function App() {
   return (
     <>
-      <GlobalStyles/>
+      <GlobalStyles />
       <BrowserRouter>
-         <Routes>
-           <Route path='/' element={<Navbar/>}/>
-         </Routes>  
-       </BrowserRouter>
-
-
+        <Navbar />
+        <Routes>
+          {/* <Route path="/" element={<Navbar />} /> */}
+          <Route path="/service" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </>
     // <>
     //   <BrowserRouter>
     //     <Routes>
     //       <Route path='/' element={<Navbar/>}/>
     //       <Route path='/home' element={<Home/>}/>
-    //     </Routes>  
+    //     </Routes>
     //   </BrowserRouter>
     // </>
   );
 }
 
 export default App;
-

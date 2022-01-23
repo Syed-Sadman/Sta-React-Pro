@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
-const GlobalStyles= createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
 *{ margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,9 +8,8 @@ const GlobalStyles= createGlobalStyle`
   body {
    
     
-    background-color: #67bc98;
-    /* color: ${props => (props.darkMode ? 'white' : 'black')}; */
+    /* color: ${(props) => (props.darkMode ? "white" : "black")}; */
   }
-`
+`;
 
 export default GlobalStyles;
